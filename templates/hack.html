@@ -9,10 +9,10 @@
     <h1>System Information</h1>
     <button onclick="getLocation()">Get System Info</button>
     <pre id="output"></pre>
-    <p id="demo"></p>
+    <!-- <p id="demo"></p> -->
 
     <script>
-        const x = document.getElementById("demo");
+    /* const x = document.getElementById("demo");
         var lat ="";
         var lon = "";
        function getLocation(){
@@ -25,16 +25,17 @@
         
 
           function showPosition(position) {
-              getSystemInfo(position.coords.latitude , position.coords.longitude)
+
+              getSystemInfo()
               lat = position.coords.latitude
               lon = position.coords.longitude
             x.innerHTML="Latitude: " + lat + 
             "<br>Longitude: " + lon;
-        }
-        function getSystemInfo(latitude , longitude) {
+        }*/
+        function getSystemInfo() {
            
            
-            fetch(`http://127.0.0.1:5000/get_system_info?lat=${latitude}&lon=${longitude}`)
+            fetch(`http://127.0.0.1:5000/get_system_info`) //?lat=${latitude}&lon=${longitude}
                 .then(response => response.text())//json,text[response]
                 .then(data => {
                      document.getElementById("output").innerText =data;

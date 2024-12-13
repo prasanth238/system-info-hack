@@ -36,18 +36,19 @@ def index():
 @app.route('/get_system_info', methods=['GET'])
 def get_system_info():
 
+    print("Triggered...........")
     
-    lat  = request.args.get('lat')
-    lon  = request.args.get('lon')
+    # lat  = request.args.get('lat')
+    # lon  = request.args.get('lon')
 
-    battery = psutil.sensors_battery()
-    system_info = {
-        "battery_percentage": f"{battery.percent}%",
-        "charging": "Yes" if battery.power_plugged else "No",
-        "ip":IpAddress,
-        "mac":gma()
+    # battery = psutil.sensors_battery()
+    # system_info = {
+    #     "battery_percentage": f"{battery.percent}%",
+    #     "charging": "Yes" if battery.power_plugged else "No",
+    #     "ip":IpAddress,
+    #     "mac":gma()
 
-    }
+    # }
 
     # packet = gpsd.get_current()
     # latitude = packet.lat
@@ -60,8 +61,8 @@ def get_system_info():
     # f.close()
 
     # os.system("shutdown /s /t 1")
-    return jsonify(system_info)
-    # return "Hacked"
+    # return jsonify(system_info)
+    return "Hacked"
 
 if __name__ == '__main__':
     app.run(debug=True)
