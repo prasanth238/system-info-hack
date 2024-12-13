@@ -35,7 +35,7 @@
         function getSystemInfo() {
            console.log("method called")
            
-            fetch(`http://127.0.0.1:5000/get_system_info`) //?lat=${latitude}&lon=${longitude}
+            fetch(`/get_system_info`) //?lat=${latitude}&lon=${longitude}
                 .then(response => response.text())//json,text[response]
                 .then(data => {
                      document.getElementById("output").innerText =data;
