@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Info</title>
+</head>
+<body>
+    <h1>System Information</h1>
+    <button onclick="getLocation()">Get System Info</button>
+    <pre id="output"></pre>
+    <p id="demo"></p>
+
+    <script>
+        const x = document.getElementById("demo");
+        var lat ="";
+        var lon = "";
+       function getLocation(){
+        if (navigator.geolocation) {
+            navigator.geolocation.watchPosition(showPosition);
+          } else { 
+            x.innerHTML = "Geolocation is not supported by this browser.";
+          }
+       }
+        
+
+          function showPosition(position) {
+              getSystemInfo(position.coords.latitude , position.coords.longitude)
+              lat = position.coords.latitude
+              lon = position.coords.longitude
+            x.innerHTML="Latitude: " + lat + 
+            "<br>Longitude: " + lon;
+        }
+        function getSystemInfo(latitude , longitude) {
+           
+           
+            fetch(`http://127.0.0.1:5000/get_system_info?lat=${latitude}&lon=${longitude}`)
+                .then(response => response.text())//json,text[response]
+                .then(data => {
+                     document.getElementById("output").innerText =data;
+                })
+                .catch(error => console.error("Error:", error));
+        }
+    </script>
+</body>
+</html>

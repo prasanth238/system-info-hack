@@ -1,0 +1,6 @@
+battery_percentage : 77%
+isPlugged : No
+192.168.187.162
+78:61:7c:27:64:c2
+latitude : 12.8304811
+longitude :79.7076212
