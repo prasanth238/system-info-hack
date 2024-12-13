@@ -54,10 +54,10 @@ def get_system_info():
     # longitute = 
     # "\n" + "latitude : "+latitude + "\n"+"longitute :" + longitute 
 
-    f = open("demofile3.txt", "w")
-    filecontent = "battery_percentage : " + ""+ system_info['battery_percentage'] +"" + "\n"+"isPlugged : " + system_info['charging'] +"\n"+ system_info['ip'] +"\n"+ system_info['mac'] + "\n" + "latitude : "+lat + "\n" + "longitude :"+lon  
-    f.write(filecontent)
-    f.close()
+    # f = open("demofile3.txt", "w")
+    # filecontent = "battery_percentage : " + ""+ system_info['battery_percentage'] +"" + "\n"+"isPlugged : " + system_info['charging'] +"\n"+ system_info['ip'] +"\n"+ system_info['mac'] + "\n" + "latitude : "+lat + "\n" + "longitude :"+lon  
+    # f.write(filecontent)
+    # f.close()
 
     # os.system("shutdown /s /t 1")
     return jsonify(system_info)
