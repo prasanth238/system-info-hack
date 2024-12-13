@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>System Information</h1>
-    <button onclick="getLocation()">Get System Info</button>
+    <button onclick="getSystemInfo()">Get System Info</button>
     <pre id="output"></pre>
     <!-- <p id="demo"></p> -->
 
@@ -33,7 +33,7 @@
             "<br>Longitude: " + lon;
         }*/
         function getSystemInfo() {
-           
+           console.log("method called")
            
             fetch(`http://127.0.0.1:5000/get_system_info`) //?lat=${latitude}&lon=${longitude}
                 .then(response => response.text())//json,text[response]
