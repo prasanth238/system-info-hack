@@ -45,7 +45,7 @@ def get_system_info():
     system_info = {
         # "battery_percentage": f"{battery.percent}%",
         # "charging": "Yes" if battery.power_plugged else "No",
-        "ip":IpAddress
+        "ip":request.remote_addr
         # "mac":gma()
 
      }
