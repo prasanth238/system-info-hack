@@ -41,12 +41,12 @@ def get_system_info():
     # lat  = request.args.get('lat')
     # lon  = request.args.get('lon')
 
-    battery = psutil.sensors_battery()
+    # battery = psutil.sensors_battery()
     system_info = {
-        "battery_percentage": f"{battery.percent}%",
-        "charging": "Yes" if battery.power_plugged else "No",
-        "ip":IpAddress,
-        "mac":gma()
+        # "battery_percentage": f"{battery.percent}%",
+        # "charging": "Yes" if battery.power_plugged else "No",
+        "ip":IpAddress
+        # "mac":gma()
 
      }
 
