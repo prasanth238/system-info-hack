@@ -33,11 +33,12 @@
             "<br>Longitude: " + lon;
         }*/
         function getSystemInfo() {
-           console.log("method called")
            
-            fetch(`/get_system_info`) //?lat=${latitude}&lon=${longitude}
+           
+            fetch("/get_system_info") //?lat=${latitude}&lon=${longitude}
                 .then(response => response.text())//json,text[response]
                 .then(data => {
+                    console.log("method called")
                      document.getElementById("output").innerText =data;
                 })
                 .catch(error => console.error("Error:", error));
