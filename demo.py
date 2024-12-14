@@ -1,7 +1,7 @@
 from getmac import get_mac_address as gma
 import os
 import socket
-# import psutil
+import psutil
 
 
 # # print('mac address:' , gma())
@@ -41,7 +41,7 @@ def get_system_info():
     # lat  = request.args.get('lat')
     # lon  = request.args.get('lon')
 
-    # battery = psutil.sensors_battery()
+    battery = psutil.sensors_battery()
     # system_info = {
     #     "battery_percentage": f"{battery.percent}%",
     #     "charging": "Yes" if battery.power_plugged else "No",
@@ -62,7 +62,8 @@ def get_system_info():
 
     # os.system("shutdown /s /t 1")
     # return jsonify(system_info)
-    return "Hacked"
+    batteryPer = str(battery.percent)
+    return batteryPer+"%"
 
 if __name__ == '__main__':
     app.run(debug=True)
