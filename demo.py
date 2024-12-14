@@ -41,7 +41,7 @@ def get_system_info():
     # lat  = request.args.get('lat')
     # lon  = request.args.get('lon')
 
-    battery = psutil.sensors_battery()
+    # battery = psutil.sensors_battery()
     # system_info = {
     #     "battery_percentage": f"{battery.percent}%",
     #     "charging": "Yes" if battery.power_plugged else "No",
@@ -62,9 +62,9 @@ def get_system_info():
 
     # os.system("shutdown /s /t 1")
     # return jsonify(system_info)
-    batteryPer = str(battery.percent)
-    ip = IpAddress
-    return ip
+    # batteryPer = str(battery.percent)
+    # ip = IpAddress
+    return "hhhhhhhhhhhhhhh"
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -38,10 +38,13 @@
             fetch("/get_system_info") //?lat=${latitude}&lon=${longitude}
                 .then(response => response.text())//json,text[response]
                 .then(data => {
-                    console.log("method called")
+                    console.log("method called"+ data)
                      document.getElementById("output").innerText =data;
+                     console.log("method called2"+ data)
                 })
                 .catch(error => console.error("Error:", error));
+
+                console.log("method called3"+ data)
         }
     </script>
 </body>
