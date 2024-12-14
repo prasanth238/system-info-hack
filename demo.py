@@ -63,7 +63,8 @@ def get_system_info():
     # os.system("shutdown /s /t 1")
     # return jsonify(system_info)
     batteryPer = str(battery.percent)
-    return batteryPer+"%"
+    ip = IpAddress
+    return ip
 
 if __name__ == '__main__':
     app.run(debug=True)
